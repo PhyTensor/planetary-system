@@ -108,7 +108,6 @@ def _(CelestialBody, GRAVITATIONAL_CONSTANT, Star, array, ndarray, np):
             dy = state[2] - self.parent_star.y_pos
 
             distance = np.linalg.norm([dx, dy])
-            # distance = np.sqrt(dx**2 + dy**2)
 
             # Newtonian gravity: a = -G*M*r_vect/r^3
             acceleration_scale: float = (
@@ -203,8 +202,8 @@ def _(CelestialBody, Dict, List, plt):
             ax.set_ylabel("Y Position (AU)", fontsize=12)
 
             # Set logarithmic scale for better outer planet visibility
-            ax.set_xscale('symlog', linthresh=10)
-            ax.set_yscale('symlog', linthresh=10)
+            # ax.set_xscale('symlog', linthresh=10)
+            # ax.set_yscale('symlog', linthresh=10)
 
             ax.legend(loc="upper right", fontsize=10)
             ax.grid(True, linestyle='--', alpha=0.3)
@@ -225,8 +224,8 @@ def _():
     # Planetary orbital parameters (semi-major axis in AU, circular velocity in AU/yr)
     planetary_data = [
         # Inner rocky planets
-        {"name": "Mercury", "mass": 1.65e-7, "semi_major_axis": 0.387,
-         "velocity": 10.09, "color": "gray"},
+        # {"name": "Mercury", "mass": 1.65e-7, "semi_major_axis": 0.387,
+        #  "velocity": 10.09, "color": "gray"},
         {"name": "Venus",   "mass": 2.45e-6, "semi_major_axis": 0.723,
          "velocity": 7.38,  "color": "goldenrod"},
         {"name": "Earth",   "mass": 3.0e-6,  "semi_major_axis": 1.0,
@@ -235,8 +234,8 @@ def _():
          "velocity": 5.06,  "color": "firebrick"},
 
         # Gas giants
-        # {"name": "Jupiter", "mass": 9.54e-4, "semi_major_axis": 5.20,
-        #  "velocity": 2.75,  "color": "darkorange"},
+        {"name": "Jupiter", "mass": 9.54e-4, "semi_major_axis": 5.20,
+         "velocity": 2.75,  "color": "darkorange"},
         # {"name": "Saturn",  "mass": 2.85e-4, "semi_major_axis": 9.58,
         #  "velocity": 2.03,  "color": "khaki"},
 
